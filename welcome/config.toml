@@ -1,0 +1,5 @@
+baseURL = "https://ginnyqg.github.io/hugo/"
+languageCode = "en-us"
+title = "Welcome to Ginny's Sight!"
+theme = "ananke"
+publishDir = "docs"
