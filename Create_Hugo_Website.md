@@ -45,6 +45,34 @@
 
 
 
+### Update exisiting post
+
+[~/blog]$ git pull origin master
+[~/blog]$ git add .
+[~/blog]$ git status
+[~/blog]$ git commit -m "initial commit"
+[~/blog]$ git push -u origin master
+
+#### check on local
+[~/blog]$ hugo server -w
+
+[~/blog]$ cd ../ginnyqg.github.io
+
+[~/ginnyqg.github.io]$ git pull origin master
+[~/ginnyqg.github.io]$ cd ../blog
+
+
+#### deploy
+[~/blog]$ hugo -d ../ginnyqg.github.io/
+
+
+[~/blog]$ cd ../ginnyqg.github.io/
+
+[~/ginnyqg.github.io]$ git status
+[~/ginnyqg.github.io]$ git add --all
+[~/ginnyqg.github.io]$ git commit -m "initial deploy"
+[~/ginnyqg.github.io]$ git push origin master
+
 
 
 
