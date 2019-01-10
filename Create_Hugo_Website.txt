@@ -1,211 +1,52 @@
-Last login: Sat Nov 10 11:35:58 on ttys000
 [~]$ hugo version
-Hugo Static Site Generator v0.50/extended darwin/amd64 BuildDate: unknown
 [~]$ mkdir blog
 [~]$ cd blog
 [~/blog]$ hugo new site .
-Congratulations! Your new Hugo site is created in /Users/qinqingao/blog.
 
-Just a few more steps and you're ready to go:
-
-1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/, or
-   create your own with the "hugo new theme <THEMENAME>" command.
-2. Perhaps you want to add some content. You can add single files
-   with "hugo new <SECTIONNAME>/<FILENAME>.<FORMAT>".
-3. Start the built-in live server via "hugo server".
-
-Visit https://gohugo.io/ for quickstart guide and full documentation.
-[~/blog]$ ls
-archetypes	content		layouts		themes
-config.toml	data		static
 [~/blog]$ git init
-Initialized empty Git repository in /Users/qinqingao/blog/.git/
 [~/blog]$ git remote add origin https://github.com/ginnyqg/blog.git
 
-
 [~/blog]$ git pull origin master
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From https://github.com/ginnyqg/blog
- * branch            master     -> FETCH_HEAD
- * [new branch]      master     -> origin/master
+
 [~/blog]$ vim .gitignore
+
 [~/blog]$ git add .
 [~/blog]$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   .gitignore
-	new file:   archetypes/default.md
-	new file:   config.toml
-
 [~/blog]$ git commit -m "initial commit"
-[master a3a1634] initial commit
- 3 files changed, 10 insertions(+)
- create mode 100644 .gitignore
- create mode 100644 archetypes/default.md
- create mode 100644 config.toml
-
-
 [~/blog]$ git push -u origin master
-Counting objects: 6, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (6/6), 586 bytes | 586.00 KiB/s, done.
-Total 6 (delta 0), reused 0 (delta 0)
-To https://github.com/ginnyqg/blog.git
-   cd1188e..a3a1634  master -> master
-Branch master set up to track remote branch master from origin.
 
-
-
-[~/blog]$ ls
-README.md	config.toml	data		static
-archetypes	content		layouts		themes
 [~/blog]$ cd themes
 [~/blog/themes]$ git clone https://github.com/sethmacleod/aerial.git
-Cloning into 'aerial'...
-remote: Enumerating objects: 127, done.
-remote: Total 127 (delta 0), reused 0 (delta 0), pack-reused 127
-Receiving objects: 100% (127/127), 4.48 MiB | 5.34 MiB/s, done.
-Resolving deltas: 100% (45/45), done.
 [~/blog/themes]$ cd ..
 [~/blog]$ ls
-README.md	config.toml	data		static
-archetypes	content		layouts		themes
 [~/blog]$ vim config.toml
-
-
 
 [~/blog]$ hugo server -w
 
-                   | EN  
-+------------------+----+
-  Pages            |  4  
-  Paginator pages  |  0  
-  Non-page files   |  0  
-  Static files     | 25  
-  Processed images |  0  
-  Aliases          |  0  
-  Sitemaps         |  1  
-  Cleaned          |  0  
-
-Total in 28 ms
-Watching for changes in /Users/qinqingao/blog/{content,data,layouts,static,themes}
-Watching for config changes in /Users/qinqingao/blog/config.toml
-Serving pages from memory
-Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
-^C[~/blog]$ ls
-README.md	content		resources
-archetypes	data		static
-config.toml	layouts		themes
 [~/blog]$ cd ..
 [~]$ git clone https://github.com/ginnyqg/ginnyqg.github.io.git
-Cloning into 'ginnyqg.github.io'...
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-
 
 
 [~/blog]$ cd ../ginnyqg.github.io
+
 [~/ginnyqg.github.io]$ git pull origin master
-From https://github.com/ginnyqg/ginnyqg.github.io
- * branch            master     -> FETCH_HEAD
-Already up-to-date.
-
-
-
 [~/ginnyqg.github.io]$ cd ../blog
+
 [~/blog]$ hugo -d ../ginnyqg.github.io/
 
-                   | EN  
-+------------------+----+
-  Pages            |  4  
-  Paginator pages  |  0  
-  Non-page files   |  0  
-  Static files     | 28  
-  Processed images |  0  
-  Aliases          |  0  
-  Sitemaps         |  1  
-  Cleaned          |  0  
-
-Total in 38 ms
-
-
-
-
 [~/blog]$ cd ../ginnyqg.github.io/
+
 [~/ginnyqg.github.io]$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-	categories/
-	css/
-	fonts/
-	index.html
-	index.xml
-	js/
-	sass/
-	sitemap.xml
-	tags/
-
-nothing added to commit but untracked files present (use "git add" to track)
 [~/ginnyqg.github.io]$ git add --all
 [~/ginnyqg.github.io]$ git commit -m "initial deploy"
-[master 60c4aee] initial deploy
- 33 files changed, 5217 insertions(+)
- create mode 100644 .DS_Store
- create mode 100644 categories/index.xml
- create mode 100644 css/.DS_Store
- create mode 100644 css/font-awesome.min.css
- create mode 100644 css/ie8.css
- create mode 100644 css/ie9.css
- create mode 100644 css/images/bg.jpg
- create mode 100644 css/images/bg_0.jpg
- create mode 100644 css/images/ie/footer.png
- create mode 100644 css/images/ie/footer.svg
- create mode 100644 css/images/overlay-pattern.png
- create mode 100644 css/images/overlay.svg
- create mode 100644 css/main.css
- create mode 100644 fonts/FontAwesome.otf
- create mode 100644 fonts/fontawesome-webfont.eot
- create mode 100644 fonts/fontawesome-webfont.svg
- create mode 100644 fonts/fontawesome-webfont.ttf
- create mode 100644 fonts/fontawesome-webfont.woff
- create mode 100644 fonts/fontawesome-webfont.woff2
- create mode 100644 index.html
- create mode 100644 index.xml
- create mode 100644 js/ie/PIE.htc
- create mode 100644 js/ie/html5shiv.js
- create mode 100644 js/ie/respond.min.js
- create mode 100644 sass/ie8.scss
- create mode 100644 sass/ie9.scss
- create mode 100644 sass/libs/_functions.scss
- create mode 100644 sass/libs/_mixins.scss
- create mode 100644 sass/libs/_skel.scss
- create mode 100644 sass/libs/_vars.scss
- create mode 100644 sass/main.scss
- create mode 100644 sitemap.xml
- create mode 100644 tags/index.xml
 [~/ginnyqg.github.io]$ git push origin master
-Counting objects: 45, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (42/42), done.
-Writing objects: 100% (45/45), 1.01 MiB | 12.26 MiB/s, done.
-Total 45 (delta 8), reused 0 (delta 0)
-remote: Resolving deltas: 100% (8/8), done.
-To https://github.com/ginnyqg/ginnyqg.github.io.git
-   47eaaf5..60c4aee  master -> master
-[~/ginnyqg.github.io]$ 
+
+
+
+
+
+
+
+
+
+
